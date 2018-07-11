@@ -16,6 +16,16 @@ const db = knex({
   }
 });
 
+// const db = knex({
+//   client: 'pg',
+//   connection: {
+//     host : '127.0.0.1',
+//     user : 'peter',
+//     password : '',
+//     database : 'face-brain'
+//   }
+// });
+
 // db.select('*').from('users').then(data => {
 // 	console.log(data);
 // });
@@ -35,8 +45,8 @@ app.get('/profile/:id', (req, res) => { profile.handleProfile(req, res, db)})
 app.put('/image',(req, res) => { image.handleImage(req, res, db)})
 app.post('/imageUrl', (req, res) =>{image.handleApiCall(req, res)})
 
-// const port = process.env.PORT || 3000;
-app.listen(process.env.PORT || 3000, () => {
-	console.log(`app is running on ${process.env.PORT}`)
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+	console.log(`app is running on ${port}`)
 })
 

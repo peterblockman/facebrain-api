@@ -1,7 +1,7 @@
 const clarifai = require('clarifai');
 
 const app = new Clarifai.App({
- apiKey: 'fc71fa8299264a518547aabb37efed4d'
+ apiKey: 'ed9424dcba1e437e804b39b4cb99d53a'
 });
 const handleApiCall = (req, res) =>{
 	app.models
@@ -9,7 +9,10 @@ const handleApiCall = (req, res) =>{
 	.then(data =>{
 		res.json(data)
 	})
-	.catch(err => console.log(err))//res.status(400).json('Api fails')
+	.catch(err => {
+		console.log('clarifai')
+		console.log('------------------------')
+		console.log(err)})//res.status(400).json('Api fails')
 }
 
 
